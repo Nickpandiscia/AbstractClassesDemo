@@ -10,9 +10,44 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            /*
-             * Todo follow all comments!! 
-             */
+            var vehicles = new List<Vehicle>();
+
+            var theCar = new Car();
+            theCar.Make = "Kia";
+            theCar.Year = 2019;
+            theCar.Model = "Forte";
+            theCar.HasTrunk = true;
+
+            var theMotorcyle = new Motorcycle();
+            theMotorcyle.Make = "Harley";
+            theMotorcyle.Year = 2000;
+            theMotorcyle.Model = "The Best One";
+            theMotorcyle.HasSideCart = true;
+
+            Vehicle sedan = new Car();
+            sedan.Make = "Chevy";
+            sedan.Year = 2004;
+            sedan.Model = "Malibu";          
+            
+
+            Vehicle sportsCar = new Car();
+            sportsCar.Make = "Mazda";
+            sportsCar.Year = 1991;
+            sportsCar.Model = "Miata";
+
+            vehicles.Add(theCar);
+            vehicles.Add(sedan);
+            vehicles.Add(sportsCar);
+            vehicles.Add(theMotorcyle);
+
+            foreach(var vehicle in vehicles)
+            {
+                Console.WriteLine($"{vehicle.Make}, {vehicle.Model}, {vehicle.Year}.");
+                vehicle.DriveAbstract();
+                Console.WriteLine("---------------");
+                vehicle.DriveVirtual();
+                Console.WriteLine("--------------");
+            }
 
             #region Vehicles
 
